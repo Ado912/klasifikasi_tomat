@@ -2,12 +2,16 @@ import streamlit as st
 import pandas as pd
 import joblib
 
+st.set_page_config(
+	page_title = "Klasifikasi Tomat",
+	page_icon = "🍅"
+)
 
 
 model = joblib.load("model_klasifikasi_tomat.joblib")
 scaler = joblib.load("scaler_klasifikasi_tomat.joblib")
 
-st.title("Klasifikasi Tomat")
+st.title(" 🍅 Klasifikasi Tomat")
 st.markdown("aplikasi machine learning untuk klasifikasi tomat apakah termasuk kategori **Ekspor,Lokal Premium atau industri** ")
 
 berat = st.slider("Berat Tomat",50, 200, 80)
@@ -24,4 +28,5 @@ if st.button("Prediksi",type="primary"):
 	st.success(f"Prediksi **{prediksi}** keyakinan **{presentase*100:.2f}%**")
 	st.snow()
 st.divider()
-st.caption("dibuat oleh **sabdo**")
+
+st.caption("🍅dibuat oleh **sabdo**")
